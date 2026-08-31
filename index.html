@@ -417,23 +417,22 @@
   <nav class="toc" aria-label="Table of contents">
     <h3>Contents</h3>
     <ol>
-      <li><a href="#s1">1. Who we are</a></li>
-      <li><a href="#s2">2. Summary</a></li>
-      <li><a href="#s3">3. Information the app accesses and collects</a></li>
-      <li><a href="#s4">4. How we use information</a></li>
-      <li><a href="#s5">5. How we share information</a></li>
-      <li><a href="#s6">6. Legal bases (EEA / UK users)</a></li>
-      <li><a href="#s7">7. Data retention and deletion</a></li>
-      <li><a href="#account-deletion" style="color: var(--accent); font-weight: 600;">8. Account deletion (Google Play)</a></li>
-      <li><a href="#s9">9. Backup and device transfer</a></li>
-      <li><a href="#s10">10. Security</a></li>
-      <li><a href="#s11">11. Your choices and controls</a></li>
-      <li><a href="#s12">12. Children's privacy</a></li>
-      <li><a href="#s13">13. International users</a></li>
-      <li><a href="#s14">14. Changes to this policy</a></li>
-      <li><a href="#s15">15. Contact us</a></li>
-      <li><a href="#s16">16. Open source</a></li>
-      <li><a href="#s17">17. Google Play Data safety &mdash; quick reference</a></li>
+      <li><a href="#s1">Who we are</a></li>
+      <li><a href="#s2">Summary</a></li>
+      <li><a href="#s3">Information the app accesses and collects</a></li>
+      <li><a href="#s4">How we use information</a></li>
+      <li><a href="#s5">How we share information</a></li>
+      <li><a href="#s6">Legal bases (EEA / UK users)</a></li>
+      <li><a href="#s7">Data retention and deletion</a></li>
+      <li><a href="#account-deletion" style="color: var(--accent); font-weight: 600;">Account and data deletion</a></li>
+      <li><a href="#s9">Backup and device transfer</a></li>
+      <li><a href="#s10">Security</a></li>
+      <li><a href="#s11">Your choices and controls</a></li>
+      <li><a href="#s12">Children's privacy</a></li>
+      <li><a href="#s13">International users</a></li>
+      <li><a href="#s14">Changes to this policy</a></li>
+      <li><a href="#s15">Contact us</a></li>
+      <li><a href="#s16">Open source</a></li>
     </ol>
   </nav>
 
@@ -652,10 +651,10 @@
     <p>If cloud deletion fails (e.g. no internet), try again when online or contact us (<a href="#s15">Section 15</a>).</p>
   </section>
 
-  <!-- Section 8 (Account Deletion - Google Play) -->
+  <!-- Section 8 (Account and data deletion) -->
   <section class="section" id="account-deletion" style="background: rgba(200, 169, 110, 0.04); border: 1px solid var(--accent); border-radius: var(--radius); padding: 2rem; margin-bottom: 2.5rem;">
-    <div class="section-number">Section 8 &bull; Google Play Policy</div>
-    <h2 class="section-title" style="color: var(--accent);">8. Account deletion (Google Play)</h2>
+    <div class="section-number">Section 8</div>
+    <h2 class="section-title" style="color: var(--accent);">8. Account and data deletion</h2>
     <p><strong>Sukun Minimalistic Launcher &mdash; Delete your account &amp; data</strong></p>
     <p>Sukun does not create a separate Sukun username/password. Optional Sign in with Google is used only for backup and sync.</p>
 
@@ -768,35 +767,6 @@
     <h2 class="section-title">16. Open source</h2>
     <p>Sukun is open source. You can review the source code to verify how the app handles data:</p>
     <p><a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">https://github.com/sunatte-saad/sukun</a></p>
-  </section>
-
-  <!-- Section 17 -->
-  <section class="section" id="s17">
-    <div class="section-number">Section 17</div>
-    <h2 class="section-title">17. Google Play Data safety &mdash; quick reference</h2>
-    <p>Use this section when completing the <strong>Data safety</strong> form in Google Play Console. Adjust answers if your enabled features differ.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Play Console topic</th><th>Sukun's answer</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Does your app collect or share user data?</strong></td><td>Processes data locally on-device. Optional Google Sign-In uploads backup JSON to user's Google Drive app-data folder. Firebase Analytics collects diagnostics. Optional weather/wallpapers contact third parties.</td></tr>
-          <tr><td><strong>Is data encrypted in transit?</strong></td><td>Yes, for HTTPS requests to Google APIs and third-party services.</td></tr>
-          <tr><td><strong>Can users request data deletion?</strong></td><td>Yes &mdash; in-app via <strong>Settings &rarr; Account &rarr; Delete account &amp; data</strong>, clearing app storage, or uninstalling (<a href="#account-deletion">Section 8</a>).</td></tr>
-          <tr><td><strong>Location</strong></td><td>Optional; approximate and precise location for weather/prayer when enabled.</td></tr>
-          <tr><td><strong>App activity &amp; Diagnostics</strong></td><td>Firebase Analytics collects app interactions, diagnostics, and crash logs. Optional local usage access for screen time / cooldown.</td></tr>
-          <tr><td><strong>Personal info</strong></td><td>Optional Google account ID, name, email, profile photo URL via Google Sign-In (stored locally and used for Drive sync).</td></tr>
-          <tr><td><strong>Financial info</strong></td><td>Purchases handled securely via Google Play Billing; no payment card data is received or stored.</td></tr>
-          <tr><td><strong>Photos / videos</strong></td><td>Not collected.</td></tr>
-          <tr><td><strong>Audio files</strong></td><td>Optional user-selected custom azan/chime URI stored locally only.</td></tr>
-          <tr><td><strong>Files and docs</strong></td><td>Backup JSON synced to user's own Google Drive app-data folder when signed in.</td></tr>
-          <tr><td><strong>Calendar, contacts, messages</strong></td><td>Not collected.</td></tr>
-          <tr><td><strong>Device or other IDs</strong></td><td>Firebase installation ID / app instance identifiers for analytics.</td></tr>
-          <tr><td><strong>Data shared with third parties</strong></td><td>Google Drive (backup), Google Play Billing (purchases), Firebase (analytics), Open-Meteo (weather), GitHub (wallpapers/sounds), DuckDuckGo/Google (search).</td></tr>
-          <tr><td><strong>Purpose</strong></td><td>App functionality, account management, analytics, and backup.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="note">If anything in this table conflicts with your actual Play Console declarations, the <strong>Data safety form and this Privacy Policy must match</strong>.</div>
   </section>
 
   <footer>
