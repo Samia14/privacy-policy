@@ -384,7 +384,7 @@
       </div>
     </div>
     <nav class="nav-links" aria-label="Main Navigation">
-      <a href="index.html">Privacy Policy</a>
+      <a href="index.html#s1">Privacy Policy</a>
       <a href="delete-account.html" class="active">Delete Account &amp; Data</a>
     </nav>
   </header>
@@ -403,10 +403,10 @@
   <div class="callout">
     <h3>Data Deletion Policy Overview</h3>
     <ul>
-      <li><strong>No Account Required:</strong> Sukun operates 100% offline and locally on your device without user accounts, logins, or remote server storage.</li>
-      <li><strong>Instant Local Deletion:</strong> You have full, direct control to delete all app data at any time directly through your device settings or inside the app.</li>
-      <li><strong>No Persistent Server Retention:</strong> Because no user data is transferred to or hosted on developer servers, there is no server-side user data to delete or retain.</li>
-      <li><strong>Automated Data Expiration:</strong> Prayer completion logs are automatically purged after 2 years; daily cooldown statistics reset every 24 hours.</li>
+      <li><strong>No Account Required:</strong> Sukun works without signing in. Optional Sign in with Google is used only for backup and sync to your Google Drive app-data folder.</li>
+      <li><strong>In-App Cloud &amp; Account Deletion:</strong> You can delete your Google Drive backup and remove account details directly in the app (<strong>Settings &rarr; Account &rarr; Delete account &amp; data</strong>).</li>
+      <li><strong>Direct Local Control:</strong> You can purge all local device data at any time via Android Settings (Clear storage) or by uninstalling the app.</li>
+      <li><strong>No Developer Server Storage:</strong> We do not operate our own backend servers that store personal user data.</li>
     </ul>
   </div>
 
@@ -415,10 +415,10 @@
     <h3>Contents</h3>
     <ol>
       <li><a href="#d1">Account System &amp; Data Storage Model</a></li>
-      <li><a href="#d2">How to Delete Your Data (Step-by-Step)</a></li>
-      <li><a href="#d3">Types of Data Stored and Deletion Behavior</a></li>
-      <li><a href="#d4">Third-Party Services Data Handling</a></li>
-      <li><a href="#d5">Manual Data Deletion Requests &amp; Contact</a></li>
+      <li><a href="#d2">How to Delete Your Account &amp; Data (Step-by-Step)</a></li>
+      <li><a href="#d3">What is Deleted vs. What is Not Deleted</a></li>
+      <li><a href="#d4">Data Retention &amp; Automatic Expiration</a></li>
+      <li><a href="#d5">Support &amp; Manual Deletion Requests</a></li>
       <li><a href="#d6">Google Play Data Safety Declaration</a></li>
     </ol>
   </nav>
@@ -427,60 +427,67 @@
   <section class="section" id="d1">
     <div class="section-number">Section 1</div>
     <h2 class="section-title">Account System &amp; Data Storage Model</h2>
-    <p>This page provides official account and data deletion information for <strong>Sukun Minimalistic Launcher</strong> (<code>sukun.minimalist.app.launcher.com</code>), published by <strong>sunatte-saad</strong> on the Google Play Store.</p>
+    <p>This page provides official account and data deletion information for <strong>Sukun Minimalistic Launcher</strong> (<code>sukun.minimalist.app.launcher.com</code>), developed by <strong>sunatte-saad</strong> on the Google Play Store.</p>
     
     <div class="table-wrap">
       <table>
         <tbody>
           <tr><td><strong>App Name</strong></td><td>Sukun Minimalistic Launcher</td></tr>
           <tr><td><strong>Package Name</strong></td><td><code>sukun.minimalist.app.launcher.com</code></td></tr>
-          <tr><td><strong>Account Creation Required?</strong></td><td><strong>No.</strong> The app does not require or offer user account registration.</td></tr>
-          <tr><td><strong>Where Data is Stored</strong></td><td>Locally on the user's device (app-private storage / <code>SharedPreferences</code>).</td></tr>
-          <tr><td><strong>Developer Server Data</strong></td><td>None. We do not operate backend servers that store personal user data.</td></tr>
+          <tr><td><strong>Account Requirement</strong></td><td><strong>Optional.</strong> Sukun works without signing in. Google Sign-In is optional and used for backup/sync to Google Drive.</td></tr>
+          <tr><td><strong>Local Storage</strong></td><td>Locally on the user's device (app-private storage / <code>SharedPreferences</code>).</td></tr>
+          <tr><td><strong>Cloud Storage</strong></td><td>Optional user-owned Google Drive (app-data folder). No developer backend servers.</td></tr>
         </tbody>
       </table>
     </div>
-
-    <p>Because Sukun does not provide user accounts with email/password logins or cloud synchronization, your data belongs solely to you and is maintained on your local device.</p>
   </section>
 
   <!-- Section 2 -->
   <section class="section" id="d2">
     <div class="section-number">Section 2</div>
-    <h2 class="section-title">How to Delete Your Data (Step-by-Step)</h2>
-    <p>You can delete any or all data stored by Sukun using any of the following methods:</p>
+    <h2 class="section-title">How to Delete Your Account &amp; Data (Step-by-Step)</h2>
 
     <div class="step-card">
-      <h4><span class="step-badge">1</span> Complete Data Wipe via Android Settings (Recommended)</h4>
-      <p>To completely and immediately erase all launcher configurations, notes, tasks, reminders, cached weather, and prayer logs from your device:</p>
+      <h4><span class="step-badge">1</span> In-App Account &amp; Cloud Backup Deletion (If Signed In)</h4>
+      <p>If you used optional Sign in with Google to back up your launcher data to Google Drive:</p>
       <ol>
-        <li>Open your device's <strong>Settings</strong> app.</li>
-        <li>Navigate to <strong>Apps</strong> (or <strong>Apps &amp; notifications</strong> / <strong>Manage Apps</strong>).</li>
-        <li>Select <strong>Sukun</strong> from the list of applications.</li>
-        <li>Tap <strong>Storage &amp; cache</strong> (or <strong>Storage</strong>).</li>
-        <li>Tap <strong>Clear storage</strong> / <strong>Clear data</strong> and confirm.</li>
+        <li>Open <strong>Sukun</strong> on your Android device.</li>
+        <li>Go to <strong>Settings &rarr; Account</strong>.</li>
+        <li>Tap <strong>Delete account &amp; data</strong>.</li>
+        <li>Confirm the prompt.</li>
       </ol>
-      <div class="note">This immediately purges all local databases, preferences, and cached files created by Sukun.</div>
+      <div class="note">This deletes your cloud backup in your Google Drive app-data folder (when deletion succeeds), removes account details from the device, and signs you out.</div>
     </div>
 
     <div class="step-card">
-      <h4><span class="step-badge">2</span> Uninstalling the Application</h4>
-      <p>Uninstalling Sukun immediately removes the application and deletes its private app storage directory from your Android device.</p>
+      <h4><span class="step-badge">2</span> Complete Local Wipe via Android Settings (All Users)</h4>
+      <p>To completely and immediately erase all local launcher configurations, notes, tasks, reminders, cached weather, and prayer logs from your device:</p>
       <ol>
-        <li>Locate the <strong>Sukun</strong> app icon or find it in your device settings.</li>
-        <li>Long-press the icon and tap <strong>Uninstall</strong> (or drag to the uninstall trash bin).</li>
+        <li>Open your device's <strong>Settings</strong> app.</li>
+        <li>Navigate to <strong>Apps</strong> &rarr; <strong>Sukun</strong>.</li>
+        <li>Tap <strong>Storage &amp; cache</strong> (or <strong>Storage</strong>).</li>
+        <li>Tap <strong>Clear storage</strong> / <strong>Clear data</strong> and confirm.</li>
+      </ol>
+    </div>
+
+    <div class="step-card">
+      <h4><span class="step-badge">3</span> Uninstalling the Application</h4>
+      <p>Uninstalling Sukun immediately removes the application and deletes its private sandbox directory from your Android device.</p>
+      <ol>
+        <li>Long-press the <strong>Sukun</strong> app icon.</li>
+        <li>Tap <strong>Uninstall</strong> (or drag to the uninstall trash bin).</li>
         <li>Confirm uninstallation to remove all application data.</li>
       </ol>
     </div>
 
     <div class="step-card">
-      <h4><span class="step-badge">3</span> In-App Deletion of Specific Content</h4>
-      <p>If you wish to delete specific items without wiping all settings:</p>
+      <h4><span class="step-badge">4</span> In-App Deletion of Specific Content</h4>
+      <p>You can also selectively delete content within the launcher:</p>
       <ul>
-        <li><strong>Notes &amp; Tasks:</strong> Swipe or tap delete on any individual note or task within the productivity screens.</li>
-        <li><strong>Reminders:</strong> Open reminders list and delete scheduled reminder entries.</li>
-        <li><strong>Custom Wallpapers &amp; Sounds:</strong> Reset wallpaper settings or revert custom azan / chime audio selections in the app settings menu.</li>
-        <li><strong>Prayer Logs:</strong> Delete logs directly or wait for the automatic 2-year expiration cycle.</li>
+        <li><strong>Notes &amp; Tasks:</strong> Delete individual notes or todo items.</li>
+        <li><strong>Reminders:</strong> Delete specific scheduled reminders in the reminders screen.</li>
+        <li><strong>Prayer Logs:</strong> Delete logs manually or let them expire after the 2-year retention window.</li>
+        <li><strong>Wallpapers &amp; Audio:</strong> Reset customized azan or chime choices in settings.</li>
       </ul>
     </div>
   </section>
@@ -488,55 +495,33 @@
   <!-- Section 3 -->
   <section class="section" id="d3">
     <div class="section-number">Section 3</div>
-    <h2 class="section-title">Types of Data Stored and Deletion Behavior</h2>
-    <p>Below is a summary of all data types processed by Sukun, their retention periods, and how they are deleted:</p>
-
+    <h2 class="section-title">What is Deleted vs. What is Not Deleted</h2>
+    
     <div class="table-wrap">
       <table>
         <thead>
-          <tr>
-            <th>Data Type</th>
-            <th>Storage Location</th>
-            <th>Retention Period</th>
-            <th>Deletion Method</th>
-          </tr>
+          <tr><th>Category</th><th>Items</th><th>Status upon "Delete account &amp; data"</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Preferences &amp; Customizations</strong> (Theme, layout, font sizes, gestures)</td>
-            <td>On-device (private storage)</td>
-            <td>Retained until changed by user or app reset</td>
-            <td>Clear app data or uninstall</td>
+            <td><strong>Deleted</strong></td>
+            <td>Google Sign-In session, cached profile details (name, email, photo URL), and backup JSON in Google Drive app-data folder</td>
+            <td>Permanently removed from app and user's Google Drive storage</td>
           </tr>
           <tr>
-            <td><strong>Notes, Tasks &amp; Reminders</strong></td>
-            <td>On-device (private storage)</td>
-            <td>Retained until deleted by user or app reset</td>
-            <td>In-app delete, clear app data, or uninstall</td>
+            <td><strong>Not Deleted</strong></td>
+            <td>Your Google Account itself</td>
+            <td>Managed independently by Google; unaffected</td>
           </tr>
           <tr>
-            <td><strong>Prayer Completion Logs</strong></td>
-            <td>On-device (private storage)</td>
-            <td>Maximum <strong>2 years</strong>, then auto-purged</td>
-            <td>In-app delete, clear app data, or uninstall</td>
+            <td><strong>Not Deleted</strong></td>
+            <td>Sukun Premium Purchase</td>
+            <td>Managed securely by Google Play; can be restored upon reinstallation</td>
           </tr>
           <tr>
-            <td><strong>App Cooldown &amp; Screen Time Stats</strong></td>
-            <td>On-device (private storage)</td>
-            <td>Current calendar day only (resets daily at 00:00)</td>
-            <td>Automatic daily reset, clear data, or uninstall</td>
-          </tr>
-          <tr>
-            <td><strong>Weather &amp; Geocoding Cache</strong></td>
-            <td>On-device (private cache)</td>
-            <td>Temporary (overwritten upon refresh)</td>
-            <td>Clear cache/data or disable weather feature</td>
-          </tr>
-          <tr>
-            <td><strong>Custom Sound URI References</strong></td>
-            <td>On-device (private storage)</td>
-            <td>Retained until modified in settings</td>
-            <td>Reset in settings, clear data, or uninstall</td>
+            <td><strong>Not Deleted (Local Only)</strong></td>
+            <td>Local launcher preferences on device</td>
+            <td>Remains on device until user taps "Clear storage" or uninstalls the app</td>
           </tr>
         </tbody>
       </table>
@@ -546,29 +531,65 @@
   <!-- Section 4 -->
   <section class="section" id="d4">
     <div class="section-number">Section 4</div>
-    <h2 class="section-title">Third-Party Services Data Handling</h2>
-    <p>Sukun does not host an intermediate backend. If you enable optional features, your device communicates directly with third-party providers via encrypted HTTPS:</p>
-    <ul>
-      <li><strong>Open-Meteo (Weather):</strong> Coordinates or city names sent for weather lookup are processed in real-time and not linked to any user profile.</li>
-      <li><strong>Unsplash (Daily Wallpaper):</strong> Wallpaper requests are standard anonymous HTTP image downloads.</li>
-      <li><strong>Search Providers (DuckDuckGo / Google):</strong> Search queries triggered by the user in the app drawer are handled directly by the selected search engine under their respective privacy policies.</li>
-    </ul>
-    <p>No user identifiers, telemetry, or analytics profiles are shared with third parties.</p>
+    <h2 class="section-title">Data Retention &amp; Automatic Expiration</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Retention Period</th>
+            <th>Deletion Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>App preferences &amp; launcher data</strong></td>
+            <td>Until changed/removed, app storage cleared, or uninstalled</td>
+            <td>Clear app storage or uninstall</td>
+          </tr>
+          <tr>
+            <td><strong>Prayer completion logs</strong></td>
+            <td>Up to <strong>2 years</strong>, then automatically deleted</td>
+            <td>In-app delete, clear storage, or uninstall</td>
+          </tr>
+          <tr>
+            <td><strong>App cooldown &amp; screen time stats</strong></td>
+            <td>Current calendar day only (resets daily at 00:00)</td>
+            <td>Automatic 24-hour reset or clear storage</td>
+          </tr>
+          <tr>
+            <td><strong>Google account details (local)</strong></td>
+            <td>Until sign-out or Delete account &amp; data</td>
+            <td>Delete account &amp; data or Sign out</td>
+          </tr>
+          <tr>
+            <td><strong>Google Drive backup</strong></td>
+            <td>Until deleted in app or removed from Drive</td>
+            <td>Delete account &amp; data in app</td>
+          </tr>
+          <tr>
+            <td><strong>Premium status</strong></td>
+            <td>Until cleared with app data; restored via Google Play</td>
+            <td>Managed by Google Play</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- Section 5 -->
   <section class="section" id="d5">
     <div class="section-number">Section 5</div>
-    <h2 class="section-title">Manual Data Deletion Requests &amp; Contact</h2>
-    <p>Because all data is stored exclusively on your device, the developer cannot remotely access or delete data from your individual phone. Clearing your app data or uninstalling the app permanently purges all data.</p>
-    <p>If you have any questions regarding data safety, data deletion, or require assistance, you can contact the developer directly:</p>
+    <h2 class="section-title">Support &amp; Manual Deletion Requests</h2>
+    <p>If automated cloud deletion fails (e.g. no internet connection) or you require assistance with your account data, please contact developer support:</p>
 
     <div class="step-card">
       <h4>Contact Developer Support</h4>
-      <p><strong>Email:</strong> <a href="mailto:samia@jumgara.com?subject=Data%20Deletion%20Request%20-%20Sukun%20Launcher">samia@jumgara.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:samia@jumgara.com?subject=Sukun%20account%20data%20deletion">samia@jumgara.com</a>, <a href="mailto:sunatte1@gmail.com?subject=Sukun%20account%20data%20deletion">sunatte1@gmail.com</a></p>
       <p><strong>GitHub Issues:</strong> <a href="https://github.com/sunatte-saad/sukun/issues" target="_blank" rel="noopener">https://github.com/sunatte-saad/sukun/issues</a></p>
+      <p><em>Please include the subject line <strong>&ldquo;Sukun account data deletion&rdquo;</strong> and the Google account email you used. We aim to respond within 30 days.</em></p>
       <p style="margin-top: 0.75rem;">
-        <a class="btn" href="mailto:samia@jumgara.com?subject=Data%20Deletion%20Request%20-%20Sukun%20Launcher&amp;body=Hello%20Developer%2C%0A%0AI%20have%20a%20question%2Frequest%20regarding%20data%20deletion%20for%20Sukun%20Minimalistic%20Launcher%3A%0A%0A">Send Data Deletion Request Email</a>
+        <a class="btn" href="mailto:samia@jumgara.com,sunatte1@gmail.com?subject=Sukun%20account%20data%20deletion&amp;body=Hello%20Developer%2C%0A%0APlease%20assist%20with%20deleting%20my%20account%20and%20cloud%20backup%20data%20for%20Sukun%20Launcher.%0A%0AMy%20Google%20Account%20Email%3A%20">Send Account Deletion Email</a>
       </p>
     </div>
   </section>
@@ -577,18 +598,17 @@
   <section class="section" id="d6">
     <div class="section-number">Section 6</div>
     <h2 class="section-title">Google Play Data Safety Declaration</h2>
-    <p>This documentation satisfies the <strong>Account and Data Deletion requirement</strong> of Google Play's User Data policy:</p>
+    <p>This page fulfills the <strong>Account &amp; Data Deletion URL requirement</strong> for Google Play Data Safety:</p>
     <ul>
-      <li><strong>Does the app allow account creation?</strong> No.</li>
-      <li><strong>Can users request data deletion?</strong> Yes, users can delete all local data directly on-device or contact the developer.</li>
-      <li><strong>Is data deleted immediately?</strong> Yes, local data is immediately deleted when clearing app storage or uninstalling.</li>
-      <li><strong>Data retention policy:</strong> Local logs are retained for a maximum of 2 years or until deleted by the user.</li>
+      <li><strong>Does the app offer account creation?</strong> Optional Sign in with Google for cloud backup &amp; sync.</li>
+      <li><strong>Can users delete their account and data?</strong> Yes &mdash; in-app via <strong>Settings &rarr; Account &rarr; Delete account &amp; data</strong>, directly on-device via Android settings, or by contacting developer support.</li>
+      <li><strong>Is data deleted immediately?</strong> Yes &mdash; Drive backup is deleted upon request and local data is purged upon clearing app storage or uninstalling.</li>
     </ul>
-    <p>For more information, see our full <a href="index.html">Privacy Policy</a>.</p>
+    <p>For complete privacy disclosures, please visit our <a href="index.html#s1">Privacy Policy</a>.</p>
   </section>
 
   <footer>
-    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="index.html">Privacy Policy</a> &bull; <a href="delete-account.html">Delete Account &amp; Data</a> &bull; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
+    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="index.html#s1">Privacy Policy</a> &bull; <a href="delete-account.html">Delete Account &amp; Data</a> &bull; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
 </div>

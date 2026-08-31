@@ -279,6 +279,55 @@
       color: #c8a96e;
     }
 
+    /* Step Card */
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .step-card h4 {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: opacity 0.15s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+
     /* Lists */
     ul, ol {
       padding-left: 1.4rem;
@@ -334,8 +383,8 @@
       </div>
     </div>
     <nav class="nav-links" aria-label="Main Navigation">
-      <a href="index.html" class="active">Privacy Policy</a>
-      <a href="delete-account.html">Delete Account &amp; Data</a>
+      <a href="#s1" class="active">Privacy Policy</a>
+      <a href="#account-deletion">Delete Account &amp; Data</a>
     </nav>
   </header>
 
@@ -343,7 +392,7 @@
   <div class="hero">
     <h2>Privacy Policy</h2>
     <div class="meta-badges">
-      <span class="badge highlight">Effective: June 6, 2026</span>
+      <span class="badge highlight">Effective date: August 31, 2026</span>
       <span class="badge">Last updated: August 31, 2026</span>
       <span class="badge">Package: sukun.minimalist.app.launcher.com</span>
     </div>
@@ -353,12 +402,14 @@
   <div class="callout">
     <h3>At a glance</h3>
     <ul>
-      <li>No ads. No analytics SDKs. No tracking.</li>
-      <li>Launcher settings, notes, todos, reminders, and logs stay <strong>on your device</strong>.</li>
-      <li>Location is used only if you enable optional weather or prayer-time features.</li>
-      <li>Usage access is used only if you enable screen time or app cooldown features.</li>
-      <li>Accessibility is optional — used only for double-tap lock, recents, and focus mode.</li>
-      <li>Network requests are made only for optional features you enable.</li>
+      <li>No ads. No account required to use the launcher.</li>
+      <li>Core launcher data stays <strong>on your device</strong>.</li>
+      <li>Optional Google Sign-In for backup and sync to your Google Drive (app-data folder).</li>
+      <li>Optional Sign in with Google &mdash; you can skip it on first launch.</li>
+      <li>Location, usage access, and accessibility are used only if you enable those features.</li>
+      <li>Firebase Analytics may collect limited app-usage and device data (see Section 3.7).</li>
+      <li>Google Play Billing handles Premium purchases; we do not store payment card details.</li>
+      <li>You can delete account and cloud backup in the app (<strong>Settings &rarr; Account</strong>).</li>
     </ul>
   </div>
 
@@ -366,316 +417,382 @@
   <nav class="toc" aria-label="Table of contents">
     <h3>Contents</h3>
     <ol>
-      <li><a href="#s1">Who we are</a></li>
-      <li><a href="#s2">Summary</a></li>
-      <li><a href="#s3">Information the app accesses and collects</a></li>
-      <li><a href="#s4">How we use information</a></li>
-      <li><a href="#s5">How we share information</a></li>
-      <li><a href="#s6">Legal bases (EEA / UK users)</a></li>
-      <li><a href="#s7">Data retention and deletion</a></li>
-      <li><a href="#s8">Backup and device transfer</a></li>
-      <li><a href="#s9">Security</a></li>
-      <li><a href="#s10">Your choices and controls</a></li>
-      <li><a href="#s11">Children's privacy</a></li>
-      <li><a href="#s12">International users</a></li>
-      <li><a href="#s13">Changes to this policy</a></li>
-      <li><a href="#s14">Contact us</a></li>
-      <li><a href="#s15">Open source</a></li>
-      <li><a href="#s16">Google Play Data safety — quick reference</a></li>
+      <li><a href="#s1">1. Who we are</a></li>
+      <li><a href="#s2">2. Summary</a></li>
+      <li><a href="#s3">3. Information the app accesses and collects</a></li>
+      <li><a href="#s4">4. How we use information</a></li>
+      <li><a href="#s5">5. How we share information</a></li>
+      <li><a href="#s6">6. Legal bases (EEA / UK users)</a></li>
+      <li><a href="#s7">7. Data retention and deletion</a></li>
+      <li><a href="#account-deletion" style="color: var(--accent); font-weight: 600;">8. Account deletion (Google Play)</a></li>
+      <li><a href="#s9">9. Backup and device transfer</a></li>
+      <li><a href="#s10">10. Security</a></li>
+      <li><a href="#s11">11. Your choices and controls</a></li>
+      <li><a href="#s12">12. Children's privacy</a></li>
+      <li><a href="#s13">13. International users</a></li>
+      <li><a href="#s14">14. Changes to this policy</a></li>
+      <li><a href="#s15">15. Contact us</a></li>
+      <li><a href="#s16">16. Open source</a></li>
+      <li><a href="#s17">17. Google Play Data safety &mdash; quick reference</a></li>
     </ol>
   </nav>
 
   <!-- Section 1 -->
   <section class="section" id="s1">
     <div class="section-number">Section 1</div>
-    <h2 class="section-title">Who we are</h2>
-    <p>This Privacy Policy applies to <strong>Sukun Minimalistic Launcher</strong> ("Sukun", "the app", "we", "us", "our").</p>
+    <h2 class="section-title">1. Who we are</h2>
+    <p>This Privacy Policy applies to <strong>Sukun Minimalistic Launcher</strong> (&ldquo;Sukun&rdquo;, &ldquo;the app&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;).</p>
     <div class="table-wrap">
       <table>
         <tbody>
           <tr><td><strong>App name</strong></td><td>Sukun Minimalistic Launcher</td></tr>
           <tr><td><strong>Android package</strong></td><td><code>sukun.minimalist.app.launcher.com</code></td></tr>
-          <tr><td><strong>Developer</strong></td><td>sunatte-saad (as shown on the Google Play store listing)</td></tr>
+          <tr><td><strong>Developer</strong></td><td>sunatte-saad (as shown on Google Play)</td></tr>
           <tr><td><strong>Type of app</strong></td><td>Android home-screen launcher</td></tr>
         </tbody>
       </table>
     </div>
-    <p>This policy explains what information the app accesses, how that information is used, whether it is shared, and what choices you have. It is intended to meet <a href="https://support.google.com/googleplay/android-developer/answer/10144311" target="_blank" rel="noopener">Google Play's User Data policy</a> and to align with the <strong>Data safety</strong> section in Google Play Console.</p>
-    <div class="note"><strong>Important:</strong> Sukun is built to keep your data on your device. We do <strong>not</strong> operate backend servers that collect, store, or profile your personal information. We do <strong>not</strong> sell your data.</div>
+    <div class="note">We do <strong>not</strong> operate our own backend servers that collect, store, or profile your personal information. We do <strong>not</strong> sell your data.</div>
   </section>
 
   <!-- Section 2 -->
   <section class="section" id="s2">
     <div class="section-number">Section 2</div>
-    <h2 class="section-title">Summary</h2>
+    <h2 class="section-title">2. Summary</h2>
     <ul>
-      <li><strong>No ads. No analytics SDKs. No tracking.</strong></li>
-      <li>Launcher settings, notes, todos, reminders, prayer logs, and usage summaries are stored <strong>locally on your device</strong>.</li>
-      <li><strong>Location</strong> is used only if you turn on optional weather or prayer-time features and choose device or manual location.</li>
-      <li><strong>Usage access</strong> is used only if you turn on optional screen time or app cooldown features.</li>
-      <li><strong>Accessibility</strong> is optional and used only for double-tap lock, home-button recents, and focus mode.</li>
-      <li>Network requests are made <strong>only for optional features you enable</strong> (weather, wallpapers) or when <strong>you choose</strong> to open a search engine or external link.</li>
+      <li>Sukun works without signing in. Sign-in is optional and used for backup/sync.</li>
+      <li>Launcher settings, notes, todos, reminders, prayer logs, and usage summaries are stored locally on your device unless you choose to back them up.</li>
+      <li>Google Sign-In (OAuth) lets you sync a backup to your Google Drive app-data folder.</li>
+      <li><strong>Location</strong> is used only if you enable optional weather or prayer-time features.</li>
+      <li><strong>Usage access</strong> is used only if you enable optional screen time or app cooldown features.</li>
+      <li><strong>Accessibility</strong> is optional &mdash; used for double-tap lock, home-button recents, and Focus mode.</li>
+      <li>Network requests occur for optional features you enable, when you sign in/sync, for Premium purchases, and when you open external links or search.</li>
     </ul>
   </section>
 
   <!-- Section 3 -->
   <section class="section" id="s3">
     <div class="section-number">Section 3</div>
-    <h2 class="section-title">Information the app accesses and collects</h2>
-    <p>Google Play requires us to disclose how the app handles user data. Below is a complete list based on how Sukun actually works.</p>
+    <h2 class="section-title">3. Information the app accesses and collects</h2>
 
-    <h3 class="subsection-title">3.1 Data we do not collect</h3>
-    <p>Sukun does <strong>not</strong> collect, and we do <strong>not</strong> receive on our servers:</p>
+    <h3 class="subsection-title">3.1 Data we do not collect on our own servers</h3>
+    <p>We do not operate servers that receive or store:</p>
     <ul>
-      <li>Name, email address, phone number, postal address, or account login credentials</li>
       <li>Contacts, SMS, call logs, photos, videos, or general file contents</li>
-      <li>Browsing history (except when you deliberately open an external browser or search engine)</li>
-      <li>Payment or financial information</li>
-      <li>Advertising identifiers or analytics profiles</li>
-      <li>Health or fitness data</li>
+      <li>Payment card or bank details (handled by Google Play)</li>
+      <li>Browsing history (except when you deliberately open a browser or search engine)</li>
     </ul>
-    <p>We do not operate a user account system and do not ask you to sign in.</p>
+    <p>We do not sell your personal information.</p>
 
     <h3 class="subsection-title">3.2 Data stored locally on your device</h3>
-    <p>The following data may be stored in app-private storage (e.g., SharedPreferences) on your device:</p>
+    <p>The following may be stored in app-private storage (SharedPreferences and internal files):</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Data type</th><th>Examples</th><th>Why it is stored</th></tr></thead>
+        <thead><tr><th>Data type</th><th>Examples</th><th>Purpose</th></tr></thead>
         <tbody>
-          <tr><td><strong>App preferences</strong></td><td>Theme, language, text size, layout, gesture settings</td><td>Personalize the launcher</td></tr>
-          <tr><td><strong>Installed-app information</strong></td><td>App names, package names, icons, hidden-app list, renamed labels, home shortcuts</td><td>Core launcher functionality</td></tr>
-          <tr><td><strong>Focus &amp; productivity data</strong></td><td>Focus mode settings, allowed/blocked apps, cooldown limits, daily open counts and session duration</td><td>Focus mode and app cooldown features</td></tr>
-          <tr><td><strong>Notes and tasks</strong></td><td>Daily notes, todo items</td><td>Personal productivity features</td></tr>
-          <tr><td><strong>Reminders</strong></td><td>Titles, messages, schedules, fire count, done count</td><td>Local reminder notifications</td></tr>
-          <tr><td><strong>Prayer-related data</strong></td><td>Location label, latitude/longitude, next prayer time, optional prayer completion logs</td><td>Prayer times and optional prayer analytics</td></tr>
-          <tr><td><strong>Weather cache</strong></td><td>Location label, coordinates, temperature, condition text</td><td>Home-screen weather display</td></tr>
-          <tr><td><strong>Wallpaper settings</strong></td><td>Daily wallpaper preference, cached image URL</td><td>Optional wallpaper feature</td></tr>
-          <tr><td><strong>Audio file references</strong></td><td>URI of a custom azan or chime file you choose</td><td>Play a sound you selected</td></tr>
-          <tr><td><strong>Onboarding flags</strong></td><td>First-open timestamps, dialog shown state</td><td>First-run experience</td></tr>
+          <tr><td><strong>App preferences</strong></td><td>Theme, language, text size, gestures, layout</td><td>Personalize the launcher</td></tr>
+          <tr><td><strong>Installed-app information</strong></td><td>App names, package names, icons, hidden apps, renamed labels, home shortcuts</td><td>Core launcher functionality</td></tr>
+          <tr><td><strong>Focus &amp; productivity</strong></td><td>Focus mode settings, cooldown limits, Mindful Morning settings</td><td>Optional wellbeing features</td></tr>
+          <tr><td><strong>Notes and tasks</strong></td><td>Daily notes, todo items</td><td>Productivity features</td></tr>
+          <tr><td><strong>Reminders</strong></td><td>Titles, messages, schedules</td><td>Local notifications</td></tr>
+          <tr><td><strong>Prayer-related data</strong></td><td>Location label, coordinates, next prayer time, completion logs, analytics rollups</td><td>Prayer times and analytics</td></tr>
+          <tr><td><strong>Weather cache</strong></td><td>Location label, coordinates, temperature, condition</td><td>Home-screen weather</td></tr>
+          <tr><td><strong>Wallpaper settings</strong></td><td>Daily wallpaper preference, cached image URL</td><td>Optional wallpaper</td></tr>
+          <tr><td><strong>Audio file references</strong></td><td>URI of custom azan or chime you choose</td><td>Play a sound you selected</td></tr>
+          <tr><td><strong>Google account (optional)</strong></td><td>Google user ID, name, email, profile photo URL</td><td>Display signed-in account; backup/sync</td></tr>
+          <tr><td><strong>Premium status</strong></td><td>Local Premium unlock state</td><td>Unlock Premium features on this device</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="note"><strong>Prayer logs:</strong> If you mark a prayer as completed, Sukun stores a local log entry. Entries are deduplicated per prayer per day and <strong>automatically deleted after two years</strong>.</div>
-    <div class="note"><strong>App cooldown data:</strong> Stored only for apps you configure. Daily usage counters reset each calendar day.</div>
-    <p>This local data is <strong>not transmitted to us</strong>.</p>
+    <p>This local data is not sent to us. Premium purchase tokens are not included in backups.</p>
 
-    <h3 class="subsection-title">3.3 Location data</h3>
-    <p>Sukun requests location permission <strong>only</strong> for optional weather and prayer-time features.</p>
+    <h3 class="subsection-title">3.3 Optional Google Sign-In and Google Drive backup</h3>
+    <p>If you choose <strong>Sign in with Google</strong>:</p>
+    <ul>
+      <li>Sukun receives your Google account ID, name, email, and profile photo through Google&rsquo;s OAuth sign-in flow.</li>
+      <li>These details are stored locally on your device to show your account in Settings.</li>
+      <li>With your permission, Sukun may upload a backup file to the app-data folder of your Google Drive account. This backup may include settings, home apps, reminders, todos, prayer rollups, and screen-time rollups &mdash; not Premium purchase status.</li>
+      <li>Sukun does not receive your Google password.</li>
+      <li>You can <strong>Sign out</strong> at any time in <strong>Settings &rarr; Account</strong>.</li>
+      <li>You can <strong>Delete account &amp; data</strong> in <strong>Settings &rarr; Account</strong> to delete the cloud backup and remove account details from the device (see Section 7 &amp; Section 8).</li>
+      <li>Google processes sign-in and Drive storage under Google&rsquo;s Privacy Policy.</li>
+    </ul>
+
+    <h3 class="subsection-title">3.4 Location data</h3>
+    <p>Sukun requests location permission only for optional weather and prayer-time features.</p>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Mode</th><th>What happens</th></tr></thead>
         <tbody>
-          <tr><td><strong>Manual location</strong></td><td>You type a city or place name. Sukun may send that text to Open-Meteo's geocoding API to resolve coordinates. GPS is not required.</td></tr>
-          <tr><td><strong>Device location</strong></td><td>With your permission, Sukun reads your device's current approximate or precise location to calculate prayer times or fetch weather. Location is processed on-device and may be sent to Open-Meteo for weather lookup.</td></tr>
-          <tr><td><strong>Google weather source</strong></td><td>Sukun opens Google Search in your browser; no weather API call is made by Sukun in that mode.</td></tr>
+          <tr><td><strong>Manual location</strong></td><td>You type a city or place. Sukun may send that text to Open-Meteo&rsquo;s geocoding API. GPS is not required.</td></tr>
+          <tr><td><strong>Device location</strong></td><td>With permission, Sukun reads location to calculate prayer times or fetch weather. Data may be sent to Open-Meteo for weather lookup.</td></tr>
+          <tr><td><strong>Google weather source</strong></td><td>Sukun opens Google Search in your browser; no weather API call is made by Sukun.</td></tr>
           <tr><td><strong>Feature off</strong></td><td>If weather and prayer times are disabled, Sukun does not access location.</td></tr>
         </tbody>
       </table>
     </div>
-    <p><strong>We do not track your location over time, build a location history, or receive location data on our servers.</strong></p>
-    <p>You can disable location access at any time in Android <strong>Settings → Apps → Sukun → Permissions → Location</strong>, or by turning off weather and prayer features in Sukun settings.</p>
+    <p>We do not track your location over time or build a location history on our servers.</p>
 
-    <h3 class="subsection-title">3.4 App activity and usage data</h3>
-    <p>If you grant <strong>Usage access</strong> (<code>PACKAGE_USAGE_STATS</code>), Sukun reads Android usage statistics <strong>on your device only</strong> to show today's total screen time and track open counts for app cooldown rules you configure.</p>
-    <p>This data is <strong>not uploaded to us</strong>. You can revoke access in Android <strong>Settings → Apps → Special app access → Usage access</strong>.</p>
-    <p>As a launcher, Sukun also reads the list of installed applications on your device so the app drawer and home screen can function. This list is used locally and is <strong>not sent to us</strong>.</p>
+    <h3 class="subsection-title">3.5 App activity and usage data</h3>
+    <p>If you grant Usage access, Sukun reads Android usage statistics on your device only for screen time display and app cooldown rules you configure. This data is not uploaded to us.</p>
+    <p>As a launcher, Sukun reads installed applications locally for the app drawer and home screen. This list is not sent to us.</p>
 
-    <h3 class="subsection-title">3.5 Accessibility data</h3>
-    <p>If you enable Sukun's <strong>optional accessibility service</strong>, the app may observe accessibility events on your device to lock the screen on double tap, open recent apps from the home button, and enforce focus mode by detecting the foreground app package name.</p>
-    <p>Accessibility data is processed <strong>only on your device</strong>. Sukun <strong>does not</strong> send accessibility events, screen content, or window text to us or to third parties.</p>
-    <p>You can disable the service at any time in Android <strong>Settings → Accessibility</strong>.</p>
+    <h3 class="subsection-title">3.6 Accessibility data</h3>
+    <p>If you enable Sukun&rsquo;s optional accessibility service, the app may observe accessibility events to lock the screen on double tap, open recent apps from the home button, and enforce Focus mode by detecting the foreground app package name.</p>
+    <p>Accessibility data is processed only on your device. Sukun does not send accessibility events, screen content, or window text to us or third parties.</p>
 
-    <h3 class="subsection-title">3.6 Data sent to third-party services</h3>
-    <p>When you use certain optional features, your device contacts third-party services <strong>directly</strong>. We do not proxy this traffic through our servers.</p>
+    <h3 class="subsection-title">3.7 Firebase Analytics</h3>
+    <p>Sukun includes Google Firebase Analytics. Firebase may automatically collect limited information such as app interactions, crash-related diagnostics, and device or app identifiers (for example, Firebase installation ID) to help us understand app usage and improve stability.</p>
+    <p>We do not use Firebase to collect your name, email, or prayer/launcher content. Firebase data is processed by Google under Google&rsquo;s Privacy Policy.</p>
+
+    <h3 class="subsection-title">3.8 Google Play Billing (Premium)</h3>
+    <p>If you purchase Sukun Premium, the transaction is processed entirely by Google Play. We receive confirmation that Premium is unlocked on your device. We do not receive or store your payment card details.</p>
+    <p>Premium is a one-time purchase tied to your Google Play account and remains on each device separately; it is not included in backup files.</p>
+
+    <h3 class="subsection-title">3.9 Data sent to third-party services</h3>
+    <p>When you use certain optional features, your device contacts third-party services directly. We do not proxy this traffic through our servers.</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Service</th><th>When it is used</th><th>Data that may be sent</th></tr></thead>
+        <thead><tr><th>Service</th><th>When used</th><th>Data that may be sent</th></tr></thead>
         <tbody>
+          <tr><td><strong>Google Sign-In / Drive</strong></td><td>Optional sign-in and backup</td><td>OAuth tokens; backup JSON to your Drive app-data folder</td></tr>
+          <tr><td><strong>Google Play Billing</strong></td><td>Premium purchase</td><td>Purchase status via Google Play</td></tr>
+          <tr><td><strong>Firebase Analytics</strong></td><td>App running</td><td>App usage, diagnostics, device/app identifiers</td></tr>
           <tr><td><strong>Open-Meteo</strong></td><td>Optional weather enabled</td><td>City name and/or coordinates</td></tr>
-          <tr><td><strong>Unsplash</strong></td><td>Optional daily wallpaper enabled</td><td>Standard HTTP request to download an image</td></tr>
-          <tr><td><strong>DuckDuckGo</strong></td><td>You search from the app drawer</td><td>Your search query</td></tr>
-          <tr><td><strong>Google Search</strong></td><td>You choose Google weather source or open a Google search action</td><td>Handled in your browser under Google's policies</td></tr>
-          <tr><td><strong>Amazon</strong></td><td>You open an optional affiliate support link</td><td>Handled on Amazon's website under Amazon's policies</td></tr>
+          <tr><td><strong>GitHub (raw content)</strong></td><td>Optional daily wallpaper / azan downloads</td><td>Standard HTTP request</td></tr>
+          <tr><td><strong>DuckDuckGo</strong></td><td>Search from app drawer</td><td>Your search query</td></tr>
+          <tr><td><strong>Google Search</strong></td><td>Google weather source or search actions</td><td>Handled in browser under Google&rsquo;s policies</td></tr>
+          <tr><td><strong>Amazon</strong></td><td>Optional affiliate support link</td><td>Handled on Amazon&rsquo;s website</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Each third party has its own privacy policy. We do not control how they handle data.</p>
-
-    <h3 class="subsection-title">3.7 Device administrator (optional)</h3>
-    <p>On older Android versions, Sukun may use the <strong>Device administrator</strong> permission as a fallback to lock the screen. This permission is used only for locking and is not used to collect data.</p>
+    <p>Each third party has its own privacy policy.</p>
   </section>
 
   <!-- Section 4 -->
   <section class="section" id="s4">
     <div class="section-number">Section 4</div>
-    <h2 class="section-title">How we use information</h2>
+    <h2 class="section-title">4. How we use information</h2>
     <p>We use information only to:</p>
     <ul>
-      <li>Operate the launcher (show apps, shortcuts, gestures, wallpapers you choose)</li>
-      <li>Save your preferences and optional content (notes, todos, reminders)</li>
+      <li>Operate the launcher and optional features you enable</li>
+      <li>Save your preferences and content (notes, todos, reminders)</li>
       <li>Calculate and display optional prayer times and weather</li>
-      <li>Send <strong>local notifications</strong> for reminders, prayer times, and optional hourly chime</li>
-      <li>Enforce optional focus mode and app cooldown rules you configure</li>
-      <li>Play optional azan or chime audio you enable</li>
+      <li>Send local notifications for reminders, prayer times, and optional hourly chime</li>
+      <li>Enforce optional Focus mode, Mindful Morning, and app cooldown rules</li>
+      <li>Sync optional backups to your Google Drive when you sign in</li>
+      <li>Process Premium purchases through Google Play</li>
+      <li>Understand app usage and stability through Firebase Analytics</li>
     </ul>
-    <p>We do <strong>not</strong> use your data for advertising, marketing profiles, or selling to data brokers.</p>
+    <p>We do not use your data for advertising or selling to data brokers.</p>
   </section>
 
   <!-- Section 5 -->
   <section class="section" id="s5">
     <div class="section-number">Section 5</div>
-    <h2 class="section-title">How we share information</h2>
-    <p>We do <strong>not</strong> sell, rent, or trade your personal information.</p>
-    <p>Information may leave your device only in these cases:</p>
+    <h2 class="section-title">5. How we share information</h2>
+    <p>We do not sell, rent, or trade your personal information.</p>
+    <p>Information may leave your device only when:</p>
     <ol>
-      <li><strong>Third-party services you use</strong> — weather APIs, wallpaper downloads, search engines, or affiliate links, as described in Section 3.6</li>
-      <li><strong>Actions you initiate</strong> — for example, sharing the app via Android's share sheet</li>
-      <li><strong>Android backup or device transfer</strong> — if enabled on your device, some app data may be included in Google backup or device-to-device transfer under your Google/account settings (see Section 8)</li>
+      <li><strong>You use optional sign-in/backup</strong> &mdash; data is stored in your Google Drive app-data folder</li>
+      <li><strong>You purchase Premium</strong> &mdash; Google Play processes the transaction</li>
+      <li><strong>Firebase Analytics</strong> &mdash; Google receives limited usage/diagnostic data</li>
+      <li><strong>Third-party services you use</strong> &mdash; weather APIs, wallpaper downloads, search engines, affiliate links (Section 3.9)</li>
+      <li><strong>Actions you initiate</strong> &mdash; e.g. sharing the app via Android&rsquo;s share sheet</li>
+      <li><strong>Android backup</strong> &mdash; if enabled on your device, some app data may be included in Google/Android backup (Section 9)</li>
     </ol>
-    <p>We do not share data with advertisers or analytics providers.</p>
   </section>
 
   <!-- Section 6 -->
   <section class="section" id="s6">
     <div class="section-number">Section 6</div>
-    <h2 class="section-title">Legal bases (EEA / UK users)</h2>
-    <p>Where applicable privacy law requires a legal basis:</p>
+    <h2 class="section-title">6. Legal bases (EEA / UK users)</h2>
+    <p>Where applicable:</p>
     <ul>
-      <li><strong>Performance of a service you request</strong> — providing launcher functionality and optional features you enable</li>
-      <li><strong>Your consent</strong> — location, notifications, usage access, accessibility, and device administrator permissions, which you grant or revoke in Android Settings</li>
-      <li><strong>Legitimate interests</strong> — maintaining a secure, functional local app without server-side profiling</li>
+      <li><strong>Performance of a service you request</strong> &mdash; launcher and optional features you enable</li>
+      <li><strong>Your consent</strong> &mdash; location, notifications, usage access, accessibility, Google Sign-In, and Drive access</li>
+      <li><strong>Legitimate interests</strong> &mdash; maintaining a functional local app without server-side profiling</li>
     </ul>
-    <p>You may withdraw consent for permissions at any time in Android Settings.</p>
+    <p>You may withdraw consent for permissions in Android Settings or by signing out and disabling optional features.</p>
   </section>
 
   <!-- Section 7 -->
   <section class="section" id="s7">
     <div class="section-number">Section 7</div>
-    <h2 class="section-title">Data retention and deletion</h2>
+    <h2 class="section-title">7. Data retention and deletion</h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Data</th><th>Retention</th></tr></thead>
         <tbody>
-          <tr><td>App preferences and launcher data</td><td>Until you change or remove it, or uninstall the app</td></tr>
-          <tr><td>Prayer completion logs</td><td>Up to <strong>2 years</strong>, then automatically deleted</td></tr>
-          <tr><td>App cooldown daily usage</td><td>Current calendar day only</td></tr>
-          <tr><td>Weather and prayer cache</td><td>Until refreshed or cleared</td></tr>
-          <tr><td>Custom audio URI references</td><td>Until you change or remove them</td></tr>
+          <tr><td><strong>App preferences and launcher data</strong></td><td>Until you change/remove it, clear app storage, or uninstall</td></tr>
+          <tr><td><strong>Prayer completion logs</strong></td><td>Up to 2 years, then automatically deleted</td></tr>
+          <tr><td><strong>App cooldown daily usage</strong></td><td>Current calendar day only</td></tr>
+          <tr><td><strong>Google account details (local)</strong></td><td>Until sign-out or Delete account &amp; data</td></tr>
+          <tr><td><strong>Google Drive backup</strong></td><td>Until you delete it in the app or remove it from Drive</td></tr>
+          <tr><td><strong>Premium status</strong></td><td>Until cleared with app data; restored via Google Play on reinstall</td></tr>
         </tbody>
       </table>
     </div>
-    <p><strong>How to delete your data:</strong></p>
+
+    <h3 class="subsection-title">How to delete your data</h3>
+    <p><strong>On device (all users):</strong></p>
     <ul>
-      <li>Remove individual content inside the app (reminders, notes, prayer logs where supported)</li>
-      <li><strong>Settings → Apps → Sukun → Storage → Clear data</strong> (Android)</li>
-      <li><strong>Uninstall Sukun</strong> — removes app-private data subject to Android behavior on your device</li>
+      <li>Remove individual content inside the app (reminders, notes, todos, prayer logs where supported)</li>
+      <li><strong>Android Settings &rarr; Apps &rarr; Sukun &rarr; Storage &rarr; Clear storage</strong></li>
+      <li><strong>Uninstall Sukun</strong></li>
     </ul>
-    <p>Because we do not operate servers, we cannot delete data from a central account. Deletion is controlled by you on your device. For full step-by-step instructions and Google Play Data Safety account deletion compliance, please see our dedicated <a href="delete-account.html"><strong>Account &amp; Data Deletion Page</strong></a>.</p>
+    <p><strong>If you signed in with Google:</strong></p>
+    <ol>
+      <li>Open Sukun &rarr; <strong>Settings &rarr; Account</strong></li>
+      <li>Tap <strong>Delete account &amp; data</strong></li>
+      <li>Confirm &mdash; this deletes your Google Drive backup (when successful), removes account details from the device, and signs you out</li>
+    </ol>
+    <p>Your local settings remain after Delete account &amp; data unless you also clear app storage or uninstall.</p>
+    <p>To remove local data completely: clear app storage or uninstall after deleting account data.</p>
+    <p>If cloud deletion fails (e.g. no internet), try again when online or contact us (<a href="#s15">Section 15</a>).</p>
   </section>
 
-  <!-- Section 8 -->
-  <section class="section" id="s8">
-    <div class="section-number">Section 8</div>
-    <h2 class="section-title">Backup and device transfer</h2>
-    <p>Sukun has <code>allowBackup="true"</code>. Depending on your device and Google account settings, Android may include some app data in Google cloud backup or device-to-device transfer.</p>
-    <p>That process is managed by Android and Google, not by Sukun servers. Review <strong>Settings → System → Backup</strong> (or your device manufacturer's equivalent) to control backup.</p>
+  <!-- Section 8 (Account Deletion - Google Play) -->
+  <section class="section" id="account-deletion" style="background: rgba(200, 169, 110, 0.04); border: 1px solid var(--accent); border-radius: var(--radius); padding: 2rem; margin-bottom: 2.5rem;">
+    <div class="section-number">Section 8 &bull; Google Play Policy</div>
+    <h2 class="section-title" style="color: var(--accent);">8. Account deletion (Google Play)</h2>
+    <p><strong>Sukun Minimalistic Launcher &mdash; Delete your account &amp; data</strong></p>
+    <p>Sukun does not create a separate Sukun username/password. Optional Sign in with Google is used only for backup and sync.</p>
+
+    <h3 class="subsection-title">Steps to delete account and cloud data:</h3>
+    <div class="step-card">
+      <ol>
+        <li>Open Sukun &rarr; <strong>Settings &rarr; Account</strong></li>
+        <li>Tap <strong>Delete account &amp; data</strong></li>
+        <li>Confirm the prompt</li>
+      </ol>
+    </div>
+
+    <h3 class="subsection-title">What is deleted:</h3>
+    <ul>
+      <li>Google Sign-In session in the app</li>
+      <li>Account name, email, and photo stored in the app</li>
+      <li>Cloud backup in your Google Drive app-data folder (when deletion succeeds)</li>
+    </ul>
+
+    <h3 class="subsection-title">What is not deleted:</h3>
+    <ul>
+      <li>Your Google account itself (managed by Google)</li>
+      <li>Sukun Premium purchase (managed by Google Play)</li>
+      <li>Local launcher data (until you clear storage or uninstall)</li>
+    </ul>
+
+    <div class="step-card" style="margin-top: 1.25rem;">
+      <h4>Support &amp; Manual Requests</h4>
+      <p>If deletion fails, email <a href="mailto:samia@jumgara.com?subject=Sukun%20account%20data%20deletion">samia@jumgara.com</a> or <a href="mailto:sunatte1@gmail.com?subject=Sukun%20account%20data%20deletion">sunatte1@gmail.com</a> with subject <strong>&ldquo;Sukun account data deletion&rdquo;</strong> and the Google account email you used. We aim to respond within 30 days.</p>
+      <p style="margin-top: 0.75rem;">
+        <a class="btn" href="mailto:samia@jumgara.com,sunatte1@gmail.com?subject=Sukun%20account%20data%20deletion&amp;body=Hello%20Developer%2C%0A%0APlease%20assist%20with%20deleting%20my%20account%20and%20cloud%20backup%20data%20for%20Sukun%20Launcher.%0A%0AMy%20Google%20Account%20Email%3A%20">Send Account Deletion Email</a>
+      </p>
+    </div>
   </section>
 
   <!-- Section 9 -->
   <section class="section" id="s9">
     <div class="section-number">Section 9</div>
-    <h2 class="section-title">Security</h2>
-    <p>Sukun processes sensitive launcher, wellbeing, and optional religious-practice data <strong>on your device</strong>. We do not maintain a central database of user activity.</p>
-    <p>Network requests for optional features use HTTPS where supported by the third-party service. No security method is perfect; protect your device with a screen lock and keep Android updated.</p>
+    <h2 class="section-title">9. Backup and device transfer</h2>
+    <p>Sukun supports manual Export / Import backup files and optional Google Drive sync when signed in.</p>
+    <p>Android may also include some app data in Google cloud backup or device-to-device transfer depending on your device settings. Review <strong>Settings &rarr; System &rarr; Backup</strong> on your device.</p>
+    <p>Premium purchase status is managed by Google Play, not by backup files.</p>
   </section>
 
   <!-- Section 10 -->
   <section class="section" id="s10">
     <div class="section-number">Section 10</div>
-    <h2 class="section-title">Your choices and controls</h2>
-    <p>You are in control of Sukun's data access:</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Feature</th><th>How to control it</th></tr></thead>
-        <tbody>
-          <tr><td>Location</td><td>Android permission settings; disable weather/prayer in Sukun</td></tr>
-          <tr><td>Notifications</td><td>Android notification settings; disable reminders/prayer/chime in Sukun</td></tr>
-          <tr><td>Usage access</td><td>Android <strong>Usage access</strong> settings; disable screen time/cooldown in Sukun</td></tr>
-          <tr><td>Accessibility</td><td>Android <strong>Accessibility</strong> settings</td></tr>
-          <tr><td>Weather / wallpapers / search</td><td>Disable in Sukun or do not use those actions</td></tr>
-          <tr><td>All local data</td><td>Clear app storage or uninstall</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <h2 class="section-title">10. Security</h2>
+    <p>Sukun processes sensitive launcher and optional wellbeing data on your device. Network requests to Google, Firebase, Open-Meteo, and other services use HTTPS where supported.</p>
+    <p>Protect your device with a screen lock and keep Android updated.</p>
   </section>
 
   <!-- Section 11 -->
   <section class="section" id="s11">
     <div class="section-number">Section 11</div>
-    <h2 class="section-title">Children's privacy</h2>
-    <p>Sukun is a general-audience app and is <strong>not directed to children under 13</strong> (or the applicable age in your country). We do not knowingly collect personal information from children. If you believe a child has used a third-party service opened from Sukun, contact us using the details in Section 14.</p>
+    <h2 class="section-title">11. Your choices and controls</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Feature</th><th>How to control it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Google Sign-In / Drive</strong></td><td>Skip on first launch; Sign out or Delete account &amp; data in Settings</td></tr>
+          <tr><td><strong>Location</strong></td><td>Android permission settings; disable weather/prayer in Sukun</td></tr>
+          <tr><td><strong>Notifications</strong></td><td>Android notification settings; disable reminders/prayer/chime in Sukun</td></tr>
+          <tr><td><strong>Usage access</strong></td><td>Android Usage access settings; disable screen time/cooldown in Sukun</td></tr>
+          <tr><td><strong>Accessibility</strong></td><td>Android Accessibility settings</td></tr>
+          <tr><td><strong>Weather / wallpapers / search</strong></td><td>Disable in Sukun or do not use those actions</td></tr>
+          <tr><td><strong>Firebase Analytics</strong></td><td>Included with the app; governed by Google&rsquo;s policies</td></tr>
+          <tr><td><strong>All local data</strong></td><td>Clear app storage or uninstall</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- Section 12 -->
   <section class="section" id="s12">
     <div class="section-number">Section 12</div>
-    <h2 class="section-title">International users</h2>
-    <p>Sukun is available in multiple countries. Data is processed primarily on your device. If you are in the European Economic Area, United Kingdom, Switzerland, or other regions with privacy laws, you may have rights to access, correct, delete, or restrict processing of personal data.</p>
-    <p>Because Sukun stores data locally and we do not operate a user database, the main way to exercise deletion rights is to clear app data or uninstall the app. For questions, contact us in Section 14.</p>
+    <h2 class="section-title">12. Children&rsquo;s privacy</h2>
+    <p>Sukun is not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has provided information through optional Google Sign-In, contact us (<a href="#s15">Section 15</a>).</p>
   </section>
 
   <!-- Section 13 -->
   <section class="section" id="s13">
     <div class="section-number">Section 13</div>
-    <h2 class="section-title">Changes to this policy</h2>
-    <p>We may update this Privacy Policy from time to time. When we do, we will change the <strong>Last updated</strong> date at the top of this document. If changes are material, we may also note them in the app's release notes or repository changelog.</p>
-    <p>Your continued use of Sukun after an update means you accept the revised policy. If you do not agree, please stop using the app and uninstall it.</p>
+    <h2 class="section-title">13. International users</h2>
+    <p>Data is processed primarily on your device. If you are in the EEA, UK, or other regions with privacy laws, you may have rights to access, correct, or delete personal data. The main ways to delete data are: <strong>Delete account &amp; data</strong> in the app, clear app storage, or uninstall.</p>
   </section>
 
   <!-- Section 14 -->
   <section class="section" id="s14">
     <div class="section-number">Section 14</div>
-    <h2 class="section-title">Contact us</h2>
-    <p>If you have questions, concerns, or privacy-related requests about Sukun, contact us at:</p>
-    <ul>
-      <li><strong>Email:</strong> <a href="mailto:samia@jumgara.com">samia@jumgara.com</a></li>
-      <li><strong>GitHub Issues:</strong> <a href="https://github.com/sunatte-saad/sukun/issues" target="_blank" rel="noopener">https://github.com/sunatte-saad/sukun/issues</a></li>
-    </ul>
-    <p>We aim to respond to reasonable privacy inquiries in a timely manner.</p>
+    <h2 class="section-title">14. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will change the <strong>Last updated</strong> date at the top. Continued use of Sukun after an update means you accept the revised policy.</p>
   </section>
 
   <!-- Section 15 -->
   <section class="section" id="s15">
     <div class="section-number">Section 15</div>
-    <h2 class="section-title">Open source</h2>
-    <p>Sukun is open source. You can review the source code to verify how the app handles data:</p>
-    <p><a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">https://github.com/sunatte-saad/sukun</a></p>
+    <h2 class="section-title">15. Contact us</h2>
+    <p>If you have questions, concerns, or privacy-related requests about Sukun, contact us at:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:samia@jumgara.com">samia@jumgara.com</a>, <a href="mailto:sunatte1@gmail.com">sunatte1@gmail.com</a></li>
+      <li><strong>GitHub Issues:</strong> <a href="https://github.com/sunatte-saad/sukun/issues" target="_blank" rel="noopener">https://github.com/sunatte-saad/sukun/issues</a></li>
+    </ul>
+    <p>We aim to respond to reasonable privacy inquiries in a timely manner.</p>
   </section>
 
   <!-- Section 16 -->
   <section class="section" id="s16">
     <div class="section-number">Section 16</div>
-    <h2 class="section-title">Google Play Data safety — quick reference</h2>
+    <h2 class="section-title">16. Open source</h2>
+    <p>Sukun is open source. You can review the source code to verify how the app handles data:</p>
+    <p><a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">https://github.com/sunatte-saad/sukun</a></p>
+  </section>
+
+  <!-- Section 17 -->
+  <section class="section" id="s17">
+    <div class="section-number">Section 17</div>
+    <h2 class="section-title">17. Google Play Data safety &mdash; quick reference</h2>
     <p>Use this section when completing the <strong>Data safety</strong> form in Google Play Console. Adjust answers if your enabled features differ.</p>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Play Console topic</th><th>Sukun's answer</th></tr></thead>
         <tbody>
-          <tr><td><strong>Does your app collect or share user data?</strong></td><td>The app processes data on-device. Optional features may send location or search queries to third parties listed in Section 3.6. We do not collect data on our own servers.</td></tr>
-          <tr><td><strong>Is data encrypted in transit?</strong></td><td>Yes, for HTTPS requests to third-party APIs</td></tr>
-          <tr><td><strong>Can users request data deletion?</strong></td><td>Yes — clear app data, uninstall, or view our <a href="delete-account.html">Account &amp; Data Deletion Policy</a></td></tr>
-          <tr><td><strong>Location</strong></td><td>Optional; approximate and precise location for weather/prayer when enabled</td></tr>
-          <tr><td><strong>App activity</strong></td><td>Optional usage stats for screen time/cooldown; installed apps for launcher (local only)</td></tr>
-          <tr><td><strong>Personal info</strong></td><td>Not collected by the developer</td></tr>
-          <tr><td><strong>Financial info</strong></td><td>Not collected</td></tr>
-          <tr><td><strong>Photos / videos</strong></td><td>Not collected</td></tr>
-          <tr><td><strong>Audio files</strong></td><td>Optional user-selected custom azan/chime URI stored locally only</td></tr>
-          <tr><td><strong>Files and docs</strong></td><td>Not collected</td></tr>
-          <tr><td><strong>Calendar, contacts, messages</strong></td><td>Not collected</td></tr>
-          <tr><td><strong>App info / crash logs</strong></td><td>No third-party crash or analytics SDK</td></tr>
-          <tr><td><strong>Device or other IDs</strong></td><td>Not collected by the developer for tracking</td></tr>
-          <tr><td><strong>Data shared with third parties</strong></td><td>Optional weather (Open-Meteo), wallpapers (Unsplash), user-initiated search (DuckDuckGo/Google), optional affiliate link (Amazon)</td></tr>
-          <tr><td><strong>Purpose</strong></td><td>App functionality only; not advertising or analytics</td></tr>
+          <tr><td><strong>Does your app collect or share user data?</strong></td><td>Processes data locally on-device. Optional Google Sign-In uploads backup JSON to user's Google Drive app-data folder. Firebase Analytics collects diagnostics. Optional weather/wallpapers contact third parties.</td></tr>
+          <tr><td><strong>Is data encrypted in transit?</strong></td><td>Yes, for HTTPS requests to Google APIs and third-party services.</td></tr>
+          <tr><td><strong>Can users request data deletion?</strong></td><td>Yes &mdash; in-app via <strong>Settings &rarr; Account &rarr; Delete account &amp; data</strong>, clearing app storage, or uninstalling (<a href="#account-deletion">Section 8</a>).</td></tr>
+          <tr><td><strong>Location</strong></td><td>Optional; approximate and precise location for weather/prayer when enabled.</td></tr>
+          <tr><td><strong>App activity &amp; Diagnostics</strong></td><td>Firebase Analytics collects app interactions, diagnostics, and crash logs. Optional local usage access for screen time / cooldown.</td></tr>
+          <tr><td><strong>Personal info</strong></td><td>Optional Google account ID, name, email, profile photo URL via Google Sign-In (stored locally and used for Drive sync).</td></tr>
+          <tr><td><strong>Financial info</strong></td><td>Purchases handled securely via Google Play Billing; no payment card data is received or stored.</td></tr>
+          <tr><td><strong>Photos / videos</strong></td><td>Not collected.</td></tr>
+          <tr><td><strong>Audio files</strong></td><td>Optional user-selected custom azan/chime URI stored locally only.</td></tr>
+          <tr><td><strong>Files and docs</strong></td><td>Backup JSON synced to user's own Google Drive app-data folder when signed in.</td></tr>
+          <tr><td><strong>Calendar, contacts, messages</strong></td><td>Not collected.</td></tr>
+          <tr><td><strong>Device or other IDs</strong></td><td>Firebase installation ID / app instance identifiers for analytics.</td></tr>
+          <tr><td><strong>Data shared with third parties</strong></td><td>Google Drive (backup), Google Play Billing (purchases), Firebase (analytics), Open-Meteo (weather), GitHub (wallpapers/sounds), DuckDuckGo/Google (search).</td></tr>
+          <tr><td><strong>Purpose</strong></td><td>App functionality, account management, analytics, and backup.</td></tr>
         </tbody>
       </table>
     </div>
@@ -683,7 +800,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="index.html">Privacy Policy</a> &bull; <a href="delete-account.html">Delete Account &amp; Data</a> &bull; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
+    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="#s1">Privacy Policy</a> &bull; <a href="#account-deletion">Delete Account &amp; Data</a> &bull; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
 </div>
