@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account &amp; Data Deletion — Sukun Minimalistic Launcher</title>
+  <meta name="description" content="Account and data deletion policy and instructions for Sukun Minimalistic Launcher for Google Play Data Safety." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --accent: #c8a96e;
+      --accent-dim: rgba(200, 169, 110, 0.12);
+      --code-bg: #1e1e1e;
+      --radius: 8px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 0 5rem;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .brand h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .brand p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .meta-badges {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .badge.highlight {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    /* Summary callout */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .callout h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .callout ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .callout ul li::before {
+      content: "✓ ";
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .callout ul li {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .toc h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .toc ol {
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      transition: opacity 0.15s;
+    }
+
+    .toc a:hover { opacity: 1; color: var(--accent); }
+
+    /* Sections */
+    .section {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-number {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    h2.section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    h3.subsection-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 0.85rem; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    strong { color: #fff; }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1rem 0;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    th {
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.65rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--text);
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface); }
+
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.1em 0.45em;
+      font-size: 0.85em;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: #c8a96e;
+    }
+
+    /* Step Card */
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .step-card h4 {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* Lists */
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 0.85rem;
+    }
+
+    li { margin-bottom: 0.3rem; color: var(--text); }
+
+    /* Links & Buttons */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: opacity 0.15s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+
+    /* Info note */
+    .note {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 0.85rem 1.1rem;
+      margin: 1rem 0;
+      font-size: 0.875rem;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--muted); }
+
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 1.5rem; }
+      td, th { padding: 0.5rem 0.65rem; }
+      .site-header { flex-direction: column; align-items: flex-start; }
+      .nav-links { width: 100%; justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">☽</div>
+      <div>
+        <h1>Sukun</h1>
+        <p>Minimalistic Launcher</p>
+      </div>
+    </div>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="index.html">Privacy Policy</a>
+      <a href="delete-account.html" class="active">Delete Account &amp; Data</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <h2>Account &amp; Data Deletion</h2>
+    <div class="meta-badges">
+      <span class="badge highlight">Google Play Data Safety Compliant</span>
+      <span class="badge">Last updated: August 31, 2026</span>
+      <span class="badge">Package: sukun.minimalist.app.launcher.com</span>
+    </div>
+  </div>
+
+  <!-- Summary callout -->
+  <div class="callout">
+    <h3>Data Deletion Policy Overview</h3>
+    <ul>
+      <li><strong>No Account Required:</strong> Sukun operates 100% offline and locally on your device without user accounts, logins, or remote server storage.</li>
+      <li><strong>Instant Local Deletion:</strong> You have full, direct control to delete all app data at any time directly through your device settings or inside the app.</li>
+      <li><strong>No Persistent Server Retention:</strong> Because no user data is transferred to or hosted on developer servers, there is no server-side user data to delete or retain.</li>
+      <li><strong>Automated Data Expiration:</strong> Prayer completion logs are automatically purged after 2 years; daily cooldown statistics reset every 24 hours.</li>
+    </ul>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc" aria-label="Table of contents">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#d1">Account System &amp; Data Storage Model</a></li>
+      <li><a href="#d2">How to Delete Your Data (Step-by-Step)</a></li>
+      <li><a href="#d3">Types of Data Stored and Deletion Behavior</a></li>
+      <li><a href="#d4">Third-Party Services Data Handling</a></li>
+      <li><a href="#d5">Manual Data Deletion Requests &amp; Contact</a></li>
+      <li><a href="#d6">Google Play Data Safety Declaration</a></li>
+    </ol>
+  </nav>
+
+  <!-- Section 1 -->
+  <section class="section" id="d1">
+    <div class="section-number">Section 1</div>
+    <h2 class="section-title">Account System &amp; Data Storage Model</h2>
+    <p>This page provides official account and data deletion information for <strong>Sukun Minimalistic Launcher</strong> (<code>sukun.minimalist.app.launcher.com</code>), published by <strong>sunatte-saad</strong> on the Google Play Store.</p>
+    
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td><strong>App Name</strong></td><td>Sukun Minimalistic Launcher</td></tr>
+          <tr><td><strong>Package Name</strong></td><td><code>sukun.minimalist.app.launcher.com</code></td></tr>
+          <tr><td><strong>Account Creation Required?</strong></td><td><strong>No.</strong> The app does not require or offer user account registration.</td></tr>
+          <tr><td><strong>Where Data is Stored</strong></td><td>Locally on the user's device (app-private storage / <code>SharedPreferences</code>).</td></tr>
+          <tr><td><strong>Developer Server Data</strong></td><td>None. We do not operate backend servers that store personal user data.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Because Sukun does not provide user accounts with email/password logins or cloud synchronization, your data belongs solely to you and is maintained on your local device.</p>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section" id="d2">
+    <div class="section-number">Section 2</div>
+    <h2 class="section-title">How to Delete Your Data (Step-by-Step)</h2>
+    <p>You can delete any or all data stored by Sukun using any of the following methods:</p>
+
+    <div class="step-card">
+      <h4><span class="step-badge">1</span> Complete Data Wipe via Android Settings (Recommended)</h4>
+      <p>To completely and immediately erase all launcher configurations, notes, tasks, reminders, cached weather, and prayer logs from your device:</p>
+      <ol>
+        <li>Open your device's <strong>Settings</strong> app.</li>
+        <li>Navigate to <strong>Apps</strong> (or <strong>Apps &amp; notifications</strong> / <strong>Manage Apps</strong>).</li>
+        <li>Select <strong>Sukun</strong> from the list of applications.</li>
+        <li>Tap <strong>Storage &amp; cache</strong> (or <strong>Storage</strong>).</li>
+        <li>Tap <strong>Clear storage</strong> / <strong>Clear data</strong> and confirm.</li>
+      </ol>
+      <div class="note">This immediately purges all local databases, preferences, and cached files created by Sukun.</div>
+    </div>
+
+    <div class="step-card">
+      <h4><span class="step-badge">2</span> Uninstalling the Application</h4>
+      <p>Uninstalling Sukun immediately removes the application and deletes its private app storage directory from your Android device.</p>
+      <ol>
+        <li>Locate the <strong>Sukun</strong> app icon or find it in your device settings.</li>
+        <li>Long-press the icon and tap <strong>Uninstall</strong> (or drag to the uninstall trash bin).</li>
+        <li>Confirm uninstallation to remove all application data.</li>
+      </ol>
+    </div>
+
+    <div class="step-card">
+      <h4><span class="step-badge">3</span> In-App Deletion of Specific Content</h4>
+      <p>If you wish to delete specific items without wiping all settings:</p>
+      <ul>
+        <li><strong>Notes &amp; Tasks:</strong> Swipe or tap delete on any individual note or task within the productivity screens.</li>
+        <li><strong>Reminders:</strong> Open reminders list and delete scheduled reminder entries.</li>
+        <li><strong>Custom Wallpapers &amp; Sounds:</strong> Reset wallpaper settings or revert custom azan / chime audio selections in the app settings menu.</li>
+        <li><strong>Prayer Logs:</strong> Delete logs directly or wait for the automatic 2-year expiration cycle.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section" id="d3">
+    <div class="section-number">Section 3</div>
+    <h2 class="section-title">Types of Data Stored and Deletion Behavior</h2>
+    <p>Below is a summary of all data types processed by Sukun, their retention periods, and how they are deleted:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Storage Location</th>
+            <th>Retention Period</th>
+            <th>Deletion Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Preferences &amp; Customizations</strong> (Theme, layout, font sizes, gestures)</td>
+            <td>On-device (private storage)</td>
+            <td>Retained until changed by user or app reset</td>
+            <td>Clear app data or uninstall</td>
+          </tr>
+          <tr>
+            <td><strong>Notes, Tasks &amp; Reminders</strong></td>
+            <td>On-device (private storage)</td>
+            <td>Retained until deleted by user or app reset</td>
+            <td>In-app delete, clear app data, or uninstall</td>
+          </tr>
+          <tr>
+            <td><strong>Prayer Completion Logs</strong></td>
+            <td>On-device (private storage)</td>
+            <td>Maximum <strong>2 years</strong>, then auto-purged</td>
+            <td>In-app delete, clear app data, or uninstall</td>
+          </tr>
+          <tr>
+            <td><strong>App Cooldown &amp; Screen Time Stats</strong></td>
+            <td>On-device (private storage)</td>
+            <td>Current calendar day only (resets daily at 00:00)</td>
+            <td>Automatic daily reset, clear data, or uninstall</td>
+          </tr>
+          <tr>
+            <td><strong>Weather &amp; Geocoding Cache</strong></td>
+            <td>On-device (private cache)</td>
+            <td>Temporary (overwritten upon refresh)</td>
+            <td>Clear cache/data or disable weather feature</td>
+          </tr>
+          <tr>
+            <td><strong>Custom Sound URI References</strong></td>
+            <td>On-device (private storage)</td>
+            <td>Retained until modified in settings</td>
+            <td>Reset in settings, clear data, or uninstall</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section" id="d4">
+    <div class="section-number">Section 4</div>
+    <h2 class="section-title">Third-Party Services Data Handling</h2>
+    <p>Sukun does not host an intermediate backend. If you enable optional features, your device communicates directly with third-party providers via encrypted HTTPS:</p>
+    <ul>
+      <li><strong>Open-Meteo (Weather):</strong> Coordinates or city names sent for weather lookup are processed in real-time and not linked to any user profile.</li>
+      <li><strong>Unsplash (Daily Wallpaper):</strong> Wallpaper requests are standard anonymous HTTP image downloads.</li>
+      <li><strong>Search Providers (DuckDuckGo / Google):</strong> Search queries triggered by the user in the app drawer are handled directly by the selected search engine under their respective privacy policies.</li>
+    </ul>
+    <p>No user identifiers, telemetry, or analytics profiles are shared with third parties.</p>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="section" id="d5">
+    <div class="section-number">Section 5</div>
+    <h2 class="section-title">Manual Data Deletion Requests &amp; Contact</h2>
+    <p>Because all data is stored exclusively on your device, the developer cannot remotely access or delete data from your individual phone. Clearing your app data or uninstalling the app permanently purges all data.</p>
+    <p>If you have any questions regarding data safety, data deletion, or require assistance, you can contact the developer directly:</p>
+
+    <div class="step-card">
+      <h4>Contact Developer Support</h4>
+      <p><strong>Email:</strong> <a href="mailto:samia@jumgara.com?subject=Data%20Deletion%20Request%20-%20Sukun%20Launcher">samia@jumgara.com</a></p>
+      <p><strong>GitHub Issues:</strong> <a href="https://github.com/sunatte-saad/sukun/issues" target="_blank" rel="noopener">https://github.com/sunatte-saad/sukun/issues</a></p>
+      <p style="margin-top: 0.75rem;">
+        <a class="btn" href="mailto:samia@jumgara.com?subject=Data%20Deletion%20Request%20-%20Sukun%20Launcher&amp;body=Hello%20Developer%2C%0A%0AI%20have%20a%20question%2Frequest%20regarding%20data%20deletion%20for%20Sukun%20Minimalistic%20Launcher%3A%0A%0A">Send Data Deletion Request Email</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="section" id="d6">
+    <div class="section-number">Section 6</div>
+    <h2 class="section-title">Google Play Data Safety Declaration</h2>
+    <p>This documentation satisfies the <strong>Account and Data Deletion requirement</strong> of Google Play's User Data policy:</p>
+    <ul>
+      <li><strong>Does the app allow account creation?</strong> No.</li>
+      <li><strong>Can users request data deletion?</strong> Yes, users can delete all local data directly on-device or contact the developer.</li>
+      <li><strong>Is data deleted immediately?</strong> Yes, local data is immediately deleted when clearing app storage or uninstalling.</li>
+      <li><strong>Data retention policy:</strong> Local logs are retained for a maximum of 2 years or until deleted by the user.</li>
+    </ul>
+    <p>For more information, see our full <a href="index.html">Privacy Policy</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="index.html">Privacy Policy</a> &bull; <a href="delete-account.html">Delete Account &amp; Data</a> &bull; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

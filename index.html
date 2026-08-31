@@ -38,10 +38,18 @@
     .site-header {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 0.75rem;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       padding-bottom: 1.5rem;
       border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     .logo {
@@ -56,15 +64,35 @@
       font-size: 20px;
     }
 
-    .site-header h1 {
+    .brand h1 {
       font-size: 1.1rem;
       font-weight: 600;
       color: var(--text);
     }
 
-    .site-header p {
+    .brand p {
       font-size: 0.8rem;
       color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+      background: var(--accent-dim);
     }
 
     /* Hero */
@@ -288,6 +316,8 @@
     @media (max-width: 600px) {
       .hero h2 { font-size: 1.5rem; }
       td, th { padding: 0.5rem 0.65rem; }
+      .site-header { flex-direction: column; align-items: flex-start; }
+      .nav-links { width: 100%; justify-content: flex-start; }
     }
   </style>
 </head>
@@ -296,11 +326,17 @@
 
   <!-- Header -->
   <header class="site-header">
-    <div class="logo">☽</div>
-    <div>
-      <h1>Sukun</h1>
-      <p>Minimalistic Launcher</p>
+    <div class="brand">
+      <div class="logo">☽</div>
+      <div>
+        <h1>Sukun</h1>
+        <p>Minimalistic Launcher</p>
+      </div>
     </div>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="index.html" class="active">Privacy Policy</a>
+      <a href="delete-account.html">Delete Account &amp; Data</a>
+    </nav>
   </header>
 
   <!-- Hero -->
@@ -308,7 +344,7 @@
     <h2>Privacy Policy</h2>
     <div class="meta-badges">
       <span class="badge highlight">Effective: June 6, 2026</span>
-      <span class="badge">Last updated: June 6, 2026</span>
+      <span class="badge">Last updated: August 31, 2026</span>
       <span class="badge">Package: sukun.minimalist.app.launcher.com</span>
     </div>
   </div>
@@ -534,7 +570,7 @@
       <li><strong>Settings → Apps → Sukun → Storage → Clear data</strong> (Android)</li>
       <li><strong>Uninstall Sukun</strong> — removes app-private data subject to Android behavior on your device</li>
     </ul>
-    <p>Because we do not operate servers, we cannot delete data from a central account. Deletion is controlled by you on your device.</p>
+    <p>Because we do not operate servers, we cannot delete data from a central account. Deletion is controlled by you on your device. For full step-by-step instructions and Google Play Data Safety account deletion compliance, please see our dedicated <a href="delete-account.html"><strong>Account &amp; Data Deletion Page</strong></a>.</p>
   </section>
 
   <!-- Section 8 -->
@@ -627,7 +663,7 @@
         <tbody>
           <tr><td><strong>Does your app collect or share user data?</strong></td><td>The app processes data on-device. Optional features may send location or search queries to third parties listed in Section 3.6. We do not collect data on our own servers.</td></tr>
           <tr><td><strong>Is data encrypted in transit?</strong></td><td>Yes, for HTTPS requests to third-party APIs</td></tr>
-          <tr><td><strong>Can users request data deletion?</strong></td><td>Yes — clear app data or uninstall (Section 7)</td></tr>
+          <tr><td><strong>Can users request data deletion?</strong></td><td>Yes — clear app data, uninstall, or view our <a href="delete-account.html">Account &amp; Data Deletion Policy</a></td></tr>
           <tr><td><strong>Location</strong></td><td>Optional; approximate and precise location for weather/prayer when enabled</td></tr>
           <tr><td><strong>App activity</strong></td><td>Optional usage stats for screen time/cooldown; installed apps for launcher (local only)</td></tr>
           <tr><td><strong>Personal info</strong></td><td>Not collected by the developer</td></tr>
@@ -647,7 +683,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
+    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="index.html">Privacy Policy</a> &bull; <a href="delete-account.html">Delete Account &amp; Data</a> &bull; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
 </div>
