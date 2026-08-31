@@ -410,6 +410,7 @@
       <li>Firebase Analytics may collect limited app-usage and device data (see Section 3.7).</li>
       <li>Google Play Billing handles Premium purchases; we do not store payment card details.</li>
       <li>You can delete account and cloud backup in the app (<strong>Settings &rarr; Account</strong>).</li>
+      <li>You can delete individual app data without deleting your account (<a href="#data-deletion">Manage app data</a>).</li>
     </ul>
   </div>
 
@@ -425,6 +426,7 @@
       <li><a href="#s6">Legal bases (EEA / UK users)</a></li>
       <li><a href="#s7">Data retention and deletion</a></li>
       <li><a href="#account-deletion" style="color: var(--accent); font-weight: 600;">Account and data deletion</a></li>
+      <li><a href="#data-deletion" style="color: var(--accent); font-weight: 600;">Manage app data (without deleting account)</a></li>
       <li><a href="#s9">Backup and device transfer</a></li>
       <li><a href="#s10">Security</a></li>
       <li><a href="#s11">Your choices and controls</a></li>
@@ -690,6 +692,73 @@
     </div>
   </section>
 
+  <!-- Section 8b (Manage app data — without deleting account) -->
+  <section class="section" id="data-deletion" style="background: rgba(200, 169, 110, 0.04); border: 1px solid var(--accent); border-radius: var(--radius); padding: 2rem; margin-bottom: 2.5rem;">
+    <div class="section-number">Manage app data</div>
+    <h2 class="section-title" style="color: var(--accent);">Delete app data without deleting your account</h2>
+    <p><strong>Sukun Minimalistic Launcher &mdash; Manage app data</strong></p>
+    <p>Use this page if you want to delete <strong>some or all Sukun data on your device</strong> while keeping your Google Sign-In account linked, or before you decide to delete your account entirely.</p>
+    <div class="note"><strong>Not the same as account deletion:</strong> <a href="#account-deletion">Delete account &amp; data</a> removes your Google Sign-In session and cloud backup. This section is for deleting local app content without signing out.</div>
+
+    <h3 class="subsection-title">Delete individual content inside Sukun</h3>
+    <p>You can remove specific data while staying signed in:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Data type</th><th>How to delete it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Reminders</strong></td><td>Open <strong>Settings &rarr; Reminders</strong>, select a reminder, and delete it</td></tr>
+          <tr><td><strong>Todo items</strong></td><td>On the home screen todo list, remove or clear completed items</td></tr>
+          <tr><td><strong>Daily notes / tasks</strong></td><td>Edit or clear notes in the daily notes feature on your home screen</td></tr>
+          <tr><td><strong>Prayer logs</strong></td><td>Prayer completion history is stored locally; older entries are automatically removed after 2 years</td></tr>
+          <tr><td><strong>Hidden apps list</strong></td><td>Unhide apps from the hidden-apps view in the app drawer</td></tr>
+          <tr><td><strong>App rename labels</strong></td><td>Reset renamed app labels from the app drawer long-press menu</td></tr>
+          <tr><td><strong>App cooldown limits</strong></td><td>Remove per-app limits from the app drawer long-press menu</td></tr>
+          <tr><td><strong>Weather / prayer location</strong></td><td>Disable weather or prayer in Settings, or switch to manual location and change it</td></tr>
+          <tr><td><strong>Custom azan / chime sounds</strong></td><td>Change back to a built-in sound in prayer or chime settings</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="subsection-title">Delete all local Sukun data (keep account signed in)</h3>
+    <div class="step-card">
+      <ol>
+        <li>Open Android <strong>Settings &rarr; Apps &rarr; Sukun &rarr; Storage</strong></li>
+        <li>Tap <strong>Clear storage</strong> or <strong>Clear data</strong></li>
+      </ol>
+    </div>
+    <p>This removes local launcher settings, todos, reminders, prayer logs, and other on-device data. Your Google account may still appear signed in until you sign out. A cloud backup on Google Drive (if you previously synced) is <strong>not</strong> removed by clearing local storage alone.</p>
+
+    <h3 class="subsection-title">Delete a local backup file you exported</h3>
+    <p>If you used <strong>Settings &rarr; Backup &rarr; Export</strong>, delete the JSON file from your device storage or cloud folder where you saved it.</p>
+
+    <h3 class="subsection-title">What is deleted vs kept</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Action</th><th>Deleted</th><th>Not deleted</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Delete individual items in app</strong></td><td>Selected reminders, todos, notes, or settings you remove</td><td>Other local data; Google Sign-In; cloud backup</td></tr>
+          <tr><td><strong>Clear app storage</strong></td><td>All local Sukun data on the device</td><td>Google account itself; Google Drive backup (unless you also delete account data); Premium via Google Play</td></tr>
+          <tr><td><strong>Delete account &amp; data</strong> (see <a href="#account-deletion">account deletion</a>)</td><td>Cloud backup + sign-in details in app</td><td>Local data until you also clear storage</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="subsection-title">What we cannot delete for you</h3>
+    <ul>
+      <li><strong>Firebase Analytics</strong> data collected automatically by Google &mdash; governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a></li>
+      <li><strong>Premium purchase</strong> &mdash; managed by Google Play</li>
+      <li><strong>Your Google account</strong> &mdash; managed by Google</li>
+    </ul>
+
+    <div class="step-card" style="margin-top: 1.25rem;">
+      <h4>Need help?</h4>
+      <p>Email <a href="mailto:samia@jumgara.com?subject=Sukun%20data%20deletion%20request">samia@jumgara.com</a> or <a href="mailto:sunatte1@gmail.com?subject=Sukun%20data%20deletion%20request">sunatte1@gmail.com</a> with subject <strong>&ldquo;Sukun data deletion request&rdquo;</strong> and describe what you want removed. We aim to respond within 30 days.</p>
+      <p style="margin-top: 0.75rem;">
+        <a class="btn" href="mailto:samia@jumgara.com,sunatte1@gmail.com?subject=Sukun%20data%20deletion%20request&amp;body=Hello%20Developer%2C%0A%0APlease%20assist%20with%20deleting%20specific%20Sukun%20app%20data.%0A%0AMy%20Google%20Account%20Email%20(if%20signed%20in)%3A%20%0A%0AData%20I%20want%20deleted%3A%20">Send Data Deletion Request</a>
+      </p>
+    </div>
+  </section>
+
   <!-- Section 9 -->
   <section class="section" id="s9">
     <div class="section-number">Section 9</div>
@@ -770,7 +839,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="#s1">Privacy Policy</a> &bull; <a href="#account-deletion">Delete Account &amp; Data</a> &bull; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
+    <p>&copy; 2026 Sukun Minimalistic Launcher &mdash; <a href="#s1">Privacy Policy</a> &bull; <a href="#account-deletion">Delete Account</a> &bull; <a href="#data-deletion">Manage App Data</a> &bull; <a href="https://github.com/sunatte-saad/sukun" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
 </div>
